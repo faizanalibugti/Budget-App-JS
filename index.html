@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/favicon.jpg" type="image/x-icon" />
+
+    <!-- Bulma CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Budget App</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1 class="title is-1">Budget Tracker</h1>
+
+      <div class="card" style="width: 420px; margin: 10px;">
+        <header class="card-header">
+          <p class="card-header-title">Total Balance</p>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            <p class="balance">$0</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="expenses">
+        <div class="card" style="width: 200px; margin: 10px;">
+          <span><i class="income-icon fas fa-arrow-circle-down"></i></span>
+          <header class="card-header">
+            <p class="card-header-title">Income</p>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              <p class="income">$0</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="width: 200px; margin: 10px;">
+          <span><i class="expense-icon fas fa-arrow-circle-up"></i></span>
+          <header class="card-header">
+            <p class="card-header-title">Expense</p>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              <p class="expense">$0</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="width: 420px; margin: 10px;">
+        <header class="card-header">
+          <p class="card-header-title">Transactions</p>
+        </header>
+        <div class="card-content">
+          <ul class="transaction-list">
+            <!-- <p class="subtitle">No transactions made yet</p> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <span class="add-icon transaction-btn"
+        ><i class="fas fa-plus-circle"></i
+      ></span>
+    </footer>
+
+    <div class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <div class="modal-card-body">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Add New Transaction</p>
+          </header>
+
+          <form action="">
+            <label for="description">Description</label>
+            <input
+              class="input is-primary description"
+              type="text"
+              placeholder="Description"
+              name="description"
+            />
+            <br />
+
+            <label for="amount">Amount</label>
+            <input
+              class="input is-primary amount"
+              type="number"
+              placeholder="Amount"
+              name="amount"
+              required
+            />
+            <br />
+
+            <div class="select is-primary is-medium" style="margin: 10px;">
+              <select class="type">
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+              </select>
+            </div>
+            <br />
+
+            <div class="select is-primary is-medium" style="margin: 10px;">
+              <select class="category">
+                <option value="default">Default</option>
+                <option value="lifestyle">Lifestyle</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="transportation">Transportation</option>
+                <option value="food">Food</option>
+                <option value="healthcare">Healthcare</option>
+              </select>
+            </div>
+          </form>
+
+          <footer class="modal-card-foot">
+            <button class="button is-success save">Save changes</button>
+            <button class="button cancel">Cancel</button>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
